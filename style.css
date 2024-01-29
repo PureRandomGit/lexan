@@ -5,7 +5,7 @@
     --font-color: black;
 }
 [data-theme="dark"] {
-    --bg: black;
+    --bg: #151515;
     --primary: orange;
     --secondary: green;
     --font-color: white;
@@ -15,6 +15,7 @@ body{
     background-color: var(--bg);
     text-align: center;
     font-family: monospace;
+    color: var(--font-color);
 }
 
 h1{
@@ -25,6 +26,11 @@ h1{
 
 h2{
     color: var(--secondary);
+}
+
+audio{
+    color: rgba(245, 0, 0, 0.5);
+    
 }
 
 .fancy-checkbox input[type="checkbox"],
