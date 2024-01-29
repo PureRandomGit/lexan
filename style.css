@@ -4,6 +4,11 @@
     --green: green;
 }
 
+body{
+    background-color: var(--bg);
+    text-align: center;
+}
+
 h1{
     color: var(--orange)
 }
