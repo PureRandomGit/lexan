@@ -2,6 +2,7 @@
     --bg: white;
     --orange: orange;
     --green: green;
+    --font: op
 }
 
 body{
@@ -10,9 +11,11 @@ body{
 }
 
 h1{
-    color: var(--orange)
+    color: var(--orange);
+    font-weight: bolder;
+    font-size: xx-large;
 }
 
 h2{
-    color: var(--green)
+    color: var(--green);
 }
