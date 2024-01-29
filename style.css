@@ -1,21 +1,55 @@
 :root {
     --bg: white;
-    --orange: orange;
-    --green: green;
-    --font: op
+    --primary: orange;
+    --secondary: green;
+    --font-color: black;
+}
+[data-theme="dark"] {
+    --bg: black;
+    --primary: orange;
+    --secondary: green;
+    --font-color: white;
 }
 
 body{
     background-color: var(--bg);
     text-align: center;
+    font-family: monospace;
 }
 
 h1{
-    color: var(--orange);
+    color: var(--primary);
     font-weight: bolder;
-    font-size: xx-large;
+    font-size: 50px;
 }
 
 h2{
-    color: var(--green);
+    color: var(--secondary);
+}
+
+.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+    display: none;
+}
+ 
+.fancy-checkbox input[type="checkbox"]:checked ~ .checked
+{
+    display: inline-block;
+}
+ 
+.fancy-checkbox input[type="checkbox"]:checked ~ .unchecked
+{
+    display: none;
+}
+
+.fancy-checkbox{
+    color: var(--font-color);
+    font-size: xx-large;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.fancy-checkbox:hover{
+    cursor:pointer ;
 }
