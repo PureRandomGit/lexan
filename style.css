@@ -59,3 +59,12 @@ audio{
 .fancy-checkbox:hover{
     cursor:pointer ;
 }
+
+.clip{
+    background-color: rgba(130, 130, 130, 0.3);
+    width: fit-content;
+    padding: 10px;
+    height: auto;
+    border-radius: 100px;
+    font-size: large;
+}
