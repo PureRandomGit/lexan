@@ -39,15 +39,32 @@
         <i class="fa-solid fa-moon unchecked"></i>
         <i class="fa-solid fa-sun checked"></i>
     </label>
-
     <h1>Lexan</h1>
-    <h2>The Best Place for High Quality Lexan Audio</h2>
-    <label for="distance">Distance From Subject:</label>
-    <select name="distance" id="distance" onchange="selectDistance(this)">
+    
+    <div class="deviceCount">
+        <p>Connect Device Count:</p>
+    </div>
+    <label for="sound">Auto Play:</label>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+    <br>
+    <br>
+    <label for="distanceGroup">Select Group to Play Sound:</label>
+    <select name="distanceGroup" id="distanceGroup" onchange="distanceGroup(this)">
         <option id="near">Near</option>
         <option id="mid">Mid</option>
         <option id="far">Far</option>
-      </select>
+    </select>
+    <br><br>
+    <label for="sound">Select Sound:</label>
+    <select name="sound" id="sound" onchange="selectSound(this)">
+        <option id="lexan">Lexan</option>
+        <option id="rickroll">RickRoll</option>
+    </select>
+    <br><br>
+    <button class="styledButton">Play on Devices</button>
     <br><br><br>
     <!-- Put Audio Clips here -->
     <audio id="raw23.wav" src="audio/raw23.wav" preload="auto"></audio>
@@ -57,7 +74,7 @@
     <a class="clip"  onclick="document.getElementById('raw23.wav').play();"><i class="fa-solid fa-play"></i> Raw 23</a>
 
     <footer>
-        <p>Client</p>
+        <p>Admin</p>
     </footer>
 </body>
 
