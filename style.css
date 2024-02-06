@@ -90,13 +90,25 @@ footer{
     text-align: center;
 }
 
+/* Bus */
+.bus {
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
+.bus rect{
+    fill: rgba(130, 130, 130, 0.3);
+    stroke: var(--font-color);
+}
+
 .distanceCount p{
     display: inline-block;
 }
 
 .styledButton {
     border-radius: 50px;
-    border: var(--font-color) 3px solid;
+    border: var(--font-color) 2px solid;
     background-color: transparent;
     color: var(--font-color);
     padding: 5px;
@@ -107,7 +119,7 @@ footer{
     position: relative;
     display: inline-block;
     width: 40px;
-    height: 22px;
+    height: 21.5px;
   }
   
   .switch input { 
