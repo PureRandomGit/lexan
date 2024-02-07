@@ -2,26 +2,25 @@ const canvas = document.getElementById("bus");
 const ctx = canvas.getContext("2d");
 
 var seatRows = 10;
-var seatColumns = 4;
+var seatColumns = 5;
 
 var w = window.innerWidth;
 
-const seatSize = (window.innerWidth/18);
+const seatSize = (window.innerWidth/10);
 
-var busLength = seatRows*(seatSize+10)+seatSize;
-var busWidth = (seatColumns*seatSize)+(10);
+var busLength = seatRows*(seatSize+10)+(seatSize*2-20);
+var busWidth = (seatColumns*seatSize)+(seatSize);
 
 
-canvas.width = busLength+20;
-canvas.height = busWidth+20;
+canvas.width = busWidth+20;
+canvas.height = busLength+20;
 
-drawArrow(ctx, busLength-seatSize+3, (busWidth/2)*.75, busLength, (busWidth/2)*.75, seatSize/8, 'gray');
-drawArrow(ctx, busLength-seatSize+3, (busWidth/2)*1.75, busLength, (busWidth/2)*1.75, seatSize/8, 'gray');
+// drawArrow(ctx, busLength-seatSize+3, (busWidth/2), busLength, (busWidth/2), seatSize/8, 'gray');
 
 ctx.strokeStyle = "gray";
 ctx.lineWidth = "2";
 ctx.beginPath();
-ctx.roundRect(10, 10, busLength, busWidth, [5]);
+ctx.roundRect(10, 10, busWidth, busLength, [5]);
 ctx.stroke();
 
 var rowInstance = 0;
@@ -32,7 +31,7 @@ while (columnInstance < seatColumns) {
             ctx.strokeStyle = "gray";
             ctx.lineWidth = "2";
             ctx.beginPath();
-            ctx.roundRect(rowInstance*(seatSize+10)+10, columnInstance*seatSize+10, seatSize, seatSize, [5]);
+            ctx.roundRect(columnInstance*seatSize+10 ,rowInstance*(seatSize+10)+seatSize*2, seatSize, seatSize, [5]);
             ctx.stroke();
             rowInstance++;
         }
@@ -42,7 +41,7 @@ while (columnInstance < seatColumns) {
             ctx.strokeStyle = "gray";
             ctx.lineWidth = "2";
             ctx.beginPath();
-            ctx.roundRect(rowInstance*(seatSize+10)+10, (columnInstance*seatSize)+20, seatSize, seatSize, [5]);
+            ctx.roundRect( (columnInstance*seatSize)+seatSize+10 ,rowInstance*(seatSize+10)+seatSize*2, seatSize, seatSize, [5]);
             ctx.stroke();
             rowInstance++;
         }
