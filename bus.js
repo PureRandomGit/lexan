@@ -1,26 +1,17 @@
-var myGamePiece;
+const canvas = document.getElementById("bus");
+const ctx = canvas.getContext("2d");
 
-function startGame() {
-    myGameArea.start();
-    myGamePiece = new component(30, 30, "red", 10, 120);
-}
+var seatRows = 10;
+var seatColumns = 4;
 
-var myGameArea = {
-    canvas : document.createElement("canvas"),
-    start : function() {
-        this.canvas.width = 100;
-        this.canvas.height = 300;
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-    }
-}
+ctx.strokeStyle = "gray";
+ctx.lineWidth = "2";
+ctx.beginPath();
+ctx.roundRect(10, 10, 100, 300, [10]);
+ctx.stroke();
 
-function component(width, height, color, x, y) {
-    this.width = width;
-    this.height = height;
-    this.x = x;
-    this.y = y;    
-    ctx = myGameArea.context;
-    ctx.fillStyle = color;
-    ctx.fillRect(this.x, this.y, this.width, this.height);
-}
+ctx.strokeStyle = "gray";
+ctx.lineWidth = "2";
+ctx.beginPath();
+ctx.roundRect(20, 20, 20, 20, [5]);
+ctx.stroke();
