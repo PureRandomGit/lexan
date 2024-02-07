@@ -40,7 +40,7 @@ while (rowInstance < seatRows) {
             ctx.font = seatSize/2 + "px Arial";
             ctx.fillStyle = "grey"
             ctx.textAlign = "center";
-            ctx.fillText(seatNumber, columnInstance*seatSize+seatSize-(seatSize/4), (rowInstance*seatSize*seatGap)+(seatSize*2.65)+10);
+            ctx.fillText(seatNumber, columnInstance*seatSize+seatSize-(seatSize/2), (rowInstance*seatSize*seatGap)+(seatSize*2.65)+10);
             
             columnInstance++;
             seatNumber++;
@@ -56,7 +56,7 @@ while (rowInstance < seatRows) {
             ctx.font = seatSize/2 + "px Arial";
             ctx.fillStyle = "grey"
             ctx.textAlign = "center";
-            ctx.fillText(seatNumber, columnInstance*seatSize+seatSize*2-(seatSize/4), (rowInstance*seatSize*seatGap)+(seatSize*2.65)+10);
+            ctx.fillText(seatNumber, columnInstance*seatSize+seatSize*2-(seatSize/2), (rowInstance*seatSize*seatGap)+(seatSize*2.65)+10);
             
             seatNumber++;
             columnInstance++;
