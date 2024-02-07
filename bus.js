@@ -1,21 +1,22 @@
 const canvas = document.getElementById("bus");
 const ctx = canvas.getContext("2d");
 
-var seatRows = 10;
-var seatColumns = 5;
-
-var w = window.innerWidth;
-
 const seatSize = (window.innerWidth/10);
+const seatGap = 1.25;
 
-var busLength = seatRows*(seatSize+10)+(seatSize*2-20);
+var seatRows = 14;
+var seatColumns = 4;
+var busLength = (seatRows*seatSize*seatGap)+(seatSize*2)-seatSize*(seatGap-1);
 var busWidth = (seatColumns*seatSize)+(seatSize);
 
 
 canvas.width = busWidth+20;
 canvas.height = busLength+20;
 
-// drawArrow(ctx, busLength-seatSize+3, (busWidth/2), busLength, (busWidth/2), seatSize/8, 'gray');
+ctx.font = .15 * busWidth + "px Arial";
+ctx.fillStyle = "grey"
+ctx.textAlign = "center";
+ctx.fillText("Front", busWidth/2+5, seatSize*1.5);
 
 ctx.strokeStyle = "gray";
 ctx.lineWidth = "2";
@@ -25,68 +26,42 @@ ctx.stroke();
 
 var rowInstance = 0;
 var columnInstance = 0;
-while (columnInstance < seatColumns) {
-    if (columnInstance < seatColumns/2) {
-        while (rowInstance < seatRows) {
+var seatNumber = 1;
+
+while (rowInstance < seatRows) {
+    while (columnInstance < seatColumns) {
+        if (columnInstance < seatColumns/2) {
             ctx.strokeStyle = "gray";
             ctx.lineWidth = "2";
             ctx.beginPath();
-            ctx.roundRect(columnInstance*seatSize+10 ,rowInstance*(seatSize+10)+seatSize*2, seatSize, seatSize, [5]);
+            ctx.roundRect(columnInstance*seatSize+10 ,(rowInstance*seatSize*seatGap)+(seatSize*2)+10, seatSize, seatSize, [5]);
             ctx.stroke();
-            rowInstance++;
+
+            ctx.font = seatSize/2 + "px Arial";
+            ctx.fillStyle = "grey"
+            ctx.textAlign = "center";
+            ctx.fillText(seatNumber, columnInstance*seatSize+seatSize-(seatSize/4), (rowInstance*seatSize*seatGap)+(seatSize*2.65)+10);
+            
+            columnInstance++;
+            seatNumber++;
         }
-    }
-    else {
-        while (rowInstance < seatRows) {
+        else {
+            // Seats
             ctx.strokeStyle = "gray";
             ctx.lineWidth = "2";
             ctx.beginPath();
-            ctx.roundRect( (columnInstance*seatSize)+seatSize+10 ,rowInstance*(seatSize+10)+seatSize*2, seatSize, seatSize, [5]);
+            ctx.roundRect(columnInstance*seatSize+seatSize+10 ,(rowInstance*seatSize*seatGap)+(seatSize*2)+10, seatSize, seatSize, [5]);
             ctx.stroke();
-            rowInstance++;
+            // Seat Numbers
+            ctx.font = seatSize/2 + "px Arial";
+            ctx.fillStyle = "grey"
+            ctx.textAlign = "center";
+            ctx.fillText(seatNumber, columnInstance*seatSize+seatSize*2-(seatSize/4), (rowInstance*seatSize*seatGap)+(seatSize*2.65)+10);
+            
+            seatNumber++;
+            columnInstance++;
         }
     }
-    rowInstance = 0;
-    columnInstance ++;
-}
-
-
-
-
-function drawArrow(ctx, fromx, fromy, tox, toy, arrowWidth, color){
-    //variables to be used when creating the arrow
-    var headlen = 10;
-    var angle = Math.atan2(toy-fromy,tox-fromx);
- 
-    ctx.save();
-    ctx.strokeStyle = color;
- 
-    //starting path of the arrow from the start square to the end square
-    //and drawing the stroke
-    ctx.beginPath();
-    ctx.moveTo(fromx, fromy);
-    ctx.lineTo(tox, toy);
-    ctx.lineWidth = arrowWidth;
-    ctx.stroke();
- 
-    //starting a new path from the head of the arrow to one of the sides of
-    //the point
-    ctx.beginPath();
-    ctx.moveTo(tox, toy);
-    ctx.lineTo(tox-headlen*Math.cos(angle-Math.PI/7),
-               toy-headlen*Math.sin(angle-Math.PI/7));
- 
-    //path from the side point of the arrow, to the other side point
-    ctx.lineTo(tox-headlen*Math.cos(angle+Math.PI/7),
-               toy-headlen*Math.sin(angle+Math.PI/7));
- 
-    //path from the side point back to the tip of the arrow, and then
-    //again to the opposite side point
-    ctx.lineTo(tox, toy);
-    ctx.lineTo(tox-headlen*Math.cos(angle-Math.PI/7),
-               toy-headlen*Math.sin(angle-Math.PI/7));
- 
-    //draws the paths created above
-    ctx.stroke();
-    ctx.restore();
+    rowInstance++;
+    columnInstance=0;
 }
