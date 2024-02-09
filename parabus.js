@@ -18,10 +18,7 @@ while (seatCount <= (seatCols * seatRows)) {
 }
 
 
-let seatSelect = document.querySelectorAll('.seat');
-
-seatSelect.forEach(function(elem) {
-    elem.addEventListener("input", function() {
-        console.log("Seats Pressed");
-    });
-});
+$(".seat").click(function(){
+    var lexiLocation = ((this.className).match(/\d+/)[0]);
+    console.log(lexiLocation);
+  });
