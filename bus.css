@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .bus {
+    --seatColumns: 4;
+    --seatRows: 14;
+    --seatSize: 10%;
+    --seatGap: 1.5rem;
+    
+    max-width: 500px;
+    width: 70%;
+    margin: 2rem auto;
+    padding: calc(var(--seatGap));
+    background-color: rgba(130, 130, 130, 0.3);
+    border-radius: 1.5rem;
+  }
+  
+  .seating {
+    display: grid;
+    grid-template-columns: repeat(var(--seatColumns), 1fr);
+    grid-template-rows: repeat(var(--seatRows), 1fr);
+    gap: var(--seatGap);
+  }
+  
+  .seat {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1/ 1;
+    background-color: rgba(130, 130, 130, 0.3);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  
+  .seat::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30%;
+    width: 100%;
+    background-color: rgba(130, 130, 130, 0.3);
+    border-radius: 0.75em;
+  }
+  
+  .seat:hover {
+    background-color: hsl(0 0 80%);
+  }
+  
+  .seat:hover::after {
+    background-color: hsl(0 0% 70%);
+  }
