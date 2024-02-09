@@ -19,6 +19,9 @@ while (seatCount <= (seatCols * seatRows)) {
 
 
 $(".seat").click(function(){
+    document.querySelectorAll(".seat")
+        .forEach((element) => element.classList.add("redSeat")");
     var lexiLocation = ((this.className).match(/\d+/)[0]);
     console.log(lexiLocation);
+    this.classList.add("redSeat");
   });

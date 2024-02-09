@@ -36,6 +36,10 @@
     font-size: 1.5rem;
     font-weight: 900;
   }
+
+  .redSeat{
+    background-color: rgba(130, 0, 0, 0.3);
+  }
   
   .seat::after {
     content: '';
