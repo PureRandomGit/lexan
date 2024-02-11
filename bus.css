@@ -9,7 +9,7 @@
     --seatGap: 1.5rem;
     
     max-width: 500px;
-    width: 70%;
+    width: 80%;
     margin: 2rem auto;
     padding: calc(var(--seatGap));
     background-color: rgba(130, 130, 130, 0.3);
