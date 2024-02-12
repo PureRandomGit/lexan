@@ -17,11 +17,21 @@ while (seatCount <= (seatCols * seatRows)) {
   seatCount++;
 }
 
+var last = 0;
 
 $(".seat").click(function(){
-    document.querySelectorAll(".seat")
-        .forEach((element) => element.classList.add("redSeat")");
+    console.log(last);
+    console.log(this);
+    var lastString = String(last);
+    String()
+    if (lastString.includes("redSeat")) {
+        last.classList.remove('redSeat');
+        console.log("test");
+    }
+    console.log(String(last).includes(".redSeat"));
     var lexiLocation = ((this.className).match(/\d+/)[0]);
     console.log(lexiLocation);
     this.classList.add("redSeat");
-  });
+    last = this;
+
+});

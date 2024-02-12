@@ -6,7 +6,7 @@
     --seatColumns: 4;
     --seatRows: 14;
     --seatSize: 10%;
-    --seatGap: 1.5rem;
+    --seatGap: 1rem;
     
     max-width: 500px;
     width: 70%;
