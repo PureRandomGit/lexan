@@ -35,7 +35,8 @@
     </script>
 </head>
 
-<body>
+<body onload="password()">
+    
     <!-- Dark Mode Toggle -->
     <label id="theme-switch" class="theme-switch; fancy-checkbox" for="checkbox_theme">
         <input type="checkbox" id="checkbox_theme" />
@@ -84,9 +85,16 @@
     <br><br>
 
     <div class="bus">
-        <h1>Front</h1>  
+        <p>Front<p>  
         <div class="seating">
         </div>  
+    </div>
+
+    <div class="popup" id="popup">
+        <br>
+        <label for="pwd">Password:</label>
+        <input type="password" id="pwd" name="pwd" minlength="4"><br><br>
+        <input type="submit" onclick="submit()">
     </div>
 
     <br><br>

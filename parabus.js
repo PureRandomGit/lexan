@@ -7,6 +7,21 @@ console.log("Rows", seatRows);
 console.log("Cols", seatCols);
 console.log("Seats", seatCols * seatRows);
 
+function password(){
+  if (localStorage.getItem("safe").includes("true")) {
+    document.getElementById("popup").style.display = "none";
+  }
+}
+
+function submit(){
+  // Send Seat to things
+  console.log("Submmited");
+  if (document.getElementById('pwd').value = "0824") {
+    document.getElementById("popup").style.display = "none";
+    localStorage.setItem("safe", "true");
+  }
+}
+
 let seatCount = 1;
 while (seatCount <= (seatCols * seatRows)) {
   const seat = document.createElement("div");
@@ -24,13 +39,13 @@ $(".seat").click(function(){
     wipeSeats();
     this.classList.add("redSeat");
     seatNumber = Number((this.className).match(/\d+/)[0]);
-    selectedSeat = $(this);
+    targetSeat = $(this);
     seatDistance();
-    return selectedSeat;
+    return targetSeat;
 });
 
 function seatDistance(){
-  currentSeat = selectedSeat;
+  currentSeat = targetSeat;
   var i = seatNumber;
   while (i < (seatNumber+9)) {
     // console.log(i);
@@ -44,7 +59,7 @@ function seatDistance(){
     currentSeat.addClass("greenSeat");  
     i++;
   }    
-  currentSeat = selectedSeat;
+  currentSeat = targetSeat;
   var i = seatNumber;
   while (i > seatNumber-9) {
     currentSeat =  $(currentSeat).prev();
