@@ -6,7 +6,7 @@
     <title>Lexan</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bus.css">
-
+    <link rel="icon" type="image/x-icon" href="icon.png">
     <script src="https://kit.fontawesome.com/5d9ef9dab9.js" crossorigin="anonymous"></script>
     <script>
         //determines if the user has a set theme
@@ -42,32 +42,40 @@
         <i class="fa-solid fa-moon unchecked"></i>
         <i class="fa-solid fa-sun checked"></i>
     </label>
+
     <h1>Lexan</h1>
     
     <div class="deviceCount">
         <p>Connect Device Count:</p>
     </div>
+
     <label for="sound">Auto Play:</label>
     <label class="switch">
         <input type="checkbox">
         <span class="slider"></span>
     </label>
-    <br>
-    <br>
+
+    <br><br>
+
     <label for="distanceGroup">Select Group to Play Sound:</label>
     <select name="distanceGroup" id="distanceGroup" onchange="distanceGroup(this)">
         <option id="near">Near</option>
         <option id="mid">Mid</option>
         <option id="far">Far</option>
     </select>
+
     <br><br>
+
     <label for="sound">Select Sound:</label>
     <select name="sound" id="sound" onchange="selectSound(this)">
         <option id="lexan">Lexan</option>
         <option id="rickroll">RickRoll</option>
     </select>
+
     <br><br>
+
     <button class="styledButton">Play on Devices</button>
+
     <br><br><br>
     <!-- Put Audio Clips here -->
     <audio id="raw23.wav" src="audio/raw23.wav" preload="auto"></audio>
@@ -76,26 +84,16 @@
     <a class="clip" onclick="document.getElementById('raw23.wav').play();"><i class="fa-solid fa-play"></i> Raw 23</a>
     <a class="clip"  onclick="document.getElementById('raw23.wav').play();"><i class="fa-solid fa-play"></i> Raw 23</a>
 
-    <!-- <br>
-    <svg class="bus">
-        <rect width="18%" height="60%" x="5%" y="20%" rx="10" ry="10"/>
-        <rect width="18%" height="60%" x="5%" y="20%" rx="10" ry="10" transform="translate(54,0)"/>
-        <rect width="18%" height="60%" x="5%" y="20%" rx="10" ry="10" transform="translate(108,0)"/>
-        <rect width="18%" height="60%" x="5%" y="20%" rx="10" ry="10" transform="translate(162,0)"/>
-        <rect width="18%" height="60%" x="5%" y="20%" rx="10" ry="10" transform="translate(216,0)"/>
-        <rect  width="90%" height="60%" x="5%" y="20%" rx="10" ry="10" fill="transparent"/>
-    </svg> -->
     <br><br>
+
     <div class="bus">
         <h1>Front</h1>  
         <div class="seating">
         </div>  
     </div>
-    <br>
 
-    <!-- <canvas id="bus"></canvas> -->
+    <br><br>
 
-    <br>
     <footer>
         <p>Admin</p>
     </footer>
@@ -104,8 +102,8 @@
 </body>
 
 <script src="audio.js"></script>
-<!-- <script src="bus.js"></script> -->
 
+<!-- Dark Mode Toggle -->
 <script>
     //identify the toggle switch HTML element
 const toggleSwitch = document.querySelector('#theme-switch input[type="checkbox"]');

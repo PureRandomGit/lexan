@@ -17,21 +17,58 @@ while (seatCount <= (seatCols * seatRows)) {
   seatCount++;
 }
 
-var last = 0;
+var selectedSeat;
+var seatNumber;
 
 $(".seat").click(function(){
-    console.log(last);
-    console.log(this);
-    var lastString = String(last);
-    String()
-    if (lastString.includes("redSeat")) {
-        last.classList.remove('redSeat');
-        console.log("test");
-    }
-    console.log(String(last).includes(".redSeat"));
-    var lexiLocation = ((this.className).match(/\d+/)[0]);
-    console.log(lexiLocation);
+    wipeSeats();
     this.classList.add("redSeat");
-    last = this;
-
+    seatNumber = Number((this.className).match(/\d+/)[0]);
+    selectedSeat = $(this);
+    seatDistance();
+    return selectedSeat;
 });
+
+function seatDistance(){
+  currentSeat = selectedSeat;
+  var i = seatNumber;
+  while (i < (seatNumber+9)) {
+    // console.log(i);
+    currentSeat =  $(currentSeat).next();
+    currentSeat.addClass("orangeSeat");  
+    i++;
+    console.log(i);
+  }    
+  while (i < seatCount) {
+    currentSeat =  $(currentSeat).next();
+    currentSeat.addClass("greenSeat");  
+    i++;
+  }    
+  currentSeat = selectedSeat;
+  var i = seatNumber;
+  while (i > seatNumber-9) {
+    currentSeat =  $(currentSeat).prev();
+    currentSeat.addClass("orangeSeat");  
+    i--;
+    console.log(i);
+  }     
+  while (i > 0) {
+    currentSeat =  $(currentSeat).prev();
+    currentSeat.addClass("greenSeat");  
+    i--;
+  }             
+}
+
+function wipeSeats() {
+  $('.seat').each(function(i, obj) {
+    if (String(this.classList).includes("redSeat")){
+      this.classList.remove("redSeat");
+    }
+    if (String(this.classList).includes("orangeSeat")){
+      this.classList.remove("orangeSeat");
+    }
+    if (String(this.classList).includes("greenSeat")){
+      this.classList.remove("greenSeat");
+    }
+  });
+}
