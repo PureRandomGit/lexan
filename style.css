@@ -90,17 +90,6 @@ footer{
     text-align: center;
 }
 
-/* Bus */
-.bus {
-    width: auto;
-    height: auto;
-    margin: auto;
-}
-
-.bus rect{
-    fill: rgba(130, 130, 130, 0.3);
-    stroke: var(--font-color);
-}
 
 .distanceCount p{
     display: inline-block;
@@ -163,3 +152,41 @@ footer{
     -ms-transform: translateX(18px);
     transform: translateX(18px);
   }
+
+.popup{
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 500px;
+}
+
+.visibility {
+    position: absolute;
+    top:15px;
+    left:15px;
+    font-size: 30px;
+    z-index: 10;
+}
+
+.visibilityBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    display: none;
+}
+
+.popup button {
+    border-radius: 1rem;
+    background-color: transparent;
+    color: var(--font-color);
+    border: var(--font-color) 3px solid;
+    margin-bottom: 50px;
+    padding: 10px;
+    font-size: 150%;
+}

@@ -46,6 +46,9 @@
   .greenSeat{
     background-color: rgba(0, 172, 63, 0.5);
   }
+  .greySeat{
+    background-color: rgba(227, 227, 227, 0.8);
+  }
   
   /* .seat::after {
     content: '';
