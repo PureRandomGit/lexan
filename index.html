@@ -121,12 +121,14 @@ function visibility() {
     if (x >= 1) {
         document.getElementById("visibilityBlox").style.display = "block";
         document.getElementById("visibility").style.color = "black";
+        document.documentElement.requestFullscreen();
         x=0;
         console.log(x);
     }
     else {
         document.getElementById("visibilityBlox").style.display = "none";
         document.getElementById("visibility").style.color = "var(--font)";
+        document.exitFullscreen();
         x = 1;
         console.log("now invisible");
     }
