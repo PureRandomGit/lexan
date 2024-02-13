@@ -99,14 +99,22 @@
 
     <br><br>
 
-    <footer>
+    <footer style="position: relative; bottom: 0px;">
         <p>Admin</p>
+        <button onclick="clearDatabase()">Clear Database</button>
     </footer>
     <script src="jquery-3.7.1.js"></script>
     <script src="parabus.js"></script>
 </body>
 
 <script src="audio.js"></script>
+
+<script>
+    function clearDatabase() {
+        //clears database
+        location.reload();
+    }
+</script>
 
 <!-- Dark Mode Toggle -->
 <script>

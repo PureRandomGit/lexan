@@ -15,6 +15,25 @@
     background-color: rgba(130, 130, 130, 0.3);
     border-radius: 1rem;
   }
+
+  .occuSeats {
+    background-color: transparent;
+  }
+
+  .occuSeats:after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\2715"; /* use the hex value here... */
+    font-size: 40px; 
+    color: #ffffffde;
+    text-align: center;
+    border-radius: .5rem;
+    font-weight: bolder;
+    background-color: transparent;
+  }
   
   .seating {
     display: grid;
@@ -68,3 +87,4 @@
   .seat:hover::after {
     background-color: hsl(0 0% 70%);
   }
+
