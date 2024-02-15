@@ -7,6 +7,23 @@ console.log("Rows", seatRows);
 console.log("Cols", seatCols);
 console.log("Seats", seatCols * seatRows);
 
+const apiUrl = "http://127.0.0.1:8002/occuseats/"
+
+fetch(apiUrl)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
 var occuSeats = ['5','8','15','42'];
 var muteSeats = [];
 

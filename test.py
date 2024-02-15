@@ -10,5 +10,5 @@ async def app(scope, receive, send):
 def test_app():
     client = TestClient(app, base_url="http://localhost:8081")
     with client.websocket_connect('/ws/1') as websocket:
-        while true:
+        while True:
             print(websocket.receive_text())
