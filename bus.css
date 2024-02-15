@@ -6,14 +6,33 @@
     --seatColumns: 4;
     --seatRows: 14;
     --seatSize: 10%;
-    --seatGap: 1.5rem;
+    --seatGap: 1rem;
     
-    max-width: 500px;
+    max-width: 300px;
     width: 80%;
     margin: 2rem auto;
     padding: calc(var(--seatGap));
     background-color: rgba(130, 130, 130, 0.3);
-    border-radius: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .occuSeats {
+    background-color: transparent;
+  }
+
+  .occuSeats:after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\2715"; /* use the hex value here... */
+    font-size: 40px; 
+    color: #ffffffde;
+    text-align: center;
+    border-radius: .5rem;
+    font-weight: bolder;
+    background-color: transparent;
   }
   
   .seating {
@@ -29,19 +48,28 @@
     width: 100%;
     aspect-ratio: 1/ 1;
     background-color: rgba(130, 130, 130, 0.3);
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 900;
   }
 
   .redSeat{
-    background-color: rgba(130, 0, 0, 0.3);
+    background-color: rgba(130, 0, 0, 0.5);
+  }
+  .orangeSeat{
+    background-color: rgba(130, 82, 0, 0.5);
+  }
+  .greenSeat{
+    background-color: rgba(0, 172, 63, 0.5);
+  }
+  .greySeat{
+    background-color: rgba(227, 227, 227, 0.8);
   }
   
-  .seat::after {
+  /* .seat::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -50,7 +78,7 @@
     width: 100%;
     background-color: rgba(130, 130, 130, 0.3);
     border-radius: 0.75em;
-  }
+  } */
   
   .seat:hover {
     background-color: hsl(0 0 80%);
@@ -59,3 +87,4 @@
   .seat:hover::after {
     background-color: hsl(0 0% 70%);
   }
+

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lexan</title>
+    <link rel="icon" type="image/x-icon" href="icon.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bus.css">
     <script src="https://kit.fontawesome.com/5d9ef9dab9.js" crossorigin="anonymous"></script>
     <script>
         //determines if the user has a set theme
@@ -40,25 +42,47 @@
         <i class="fa-solid fa-sun checked"></i>
     </label>
 
+    <div class="visibility">
+        <i onclick="visibility()" id="visibility" class="fa-regular fa-eye"></i>
+    </div>
+
     <h1>Lexan</h1>
-    <h2>The Best Place for High Quality Lexan Audio</h2>
-    <label for="distance">Distance From Subject:</label>
+    <p>Please leave your screen on and press the eye icon to hide screen.</p>
+    <p>Also turn screen brightness all the way down and ensure your sound is on at about 50%.</p>
+
+    <!-- <label for="distance">Distance From Subject:</label>
     <select name="distance" id="distance" onchange="selectDistance(this)">
         <option id="near">Near</option>
         <option id="mid">Mid</option>
         <option id="far">Far</option>
-      </select>
+      </select> -->
     <br><br><br>
     <!-- Put Audio Clips here -->
     <audio id="raw23.wav" src="audio/raw23.wav" preload="auto"></audio>
         
-    <!-- Call Audio Clips here -->
+    <!-- Call Audio Clips here
     <a class="clip" onclick="document.getElementById('raw23.wav').play();"><i class="fa-solid fa-play"></i> Raw 23</a>
-    <a class="clip"  onclick="document.getElementById('raw23.wav').play();"><i class="fa-solid fa-play"></i> Raw 23</a>
+    <a class="clip"  onclick="document.getElementById('raw23.wav').play();"><i class="fa-solid fa-play"></i> Raw 23</a> -->
+
+    <div class="popup" id="popup" style="display:none">
+        <p>Please select your seat then press confirm.</p>
+        <div class="bus">
+            <h1>Front</h1>  
+            <div class="seating">
+            </div>  
+        </div>
+        <button onclick="confirm()">Confirm Seat</button>
+    </div>
 
     <footer>
         <p>Client</p>
     </footer>
+
+    <div id="visibilityBlox" class="visibilityBox">
+    </div>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="selectorbus.js"></script>
 </body>
 
 <script src="audio.js"></script>
@@ -88,5 +112,27 @@ if (document.documentElement.getAttribute("data-theme") == "dark"){
     toggleSwitch.checked = true;
 }
 </script> 
+
+<script>
+var x = 1;
+
+function visibility() {
+    console.log("ran");
+    if (x >= 1) {
+        document.getElementById("visibilityBlox").style.display = "block";
+        document.getElementById("visibility").style.color = "black";
+        document.documentElement.requestFullscreen();
+        x=0;
+        console.log(x);
+    }
+    else {
+        document.getElementById("visibilityBlox").style.display = "none";
+        document.getElementById("visibility").style.color = "var(--font)";
+        document.exitFullscreen();
+        x = 1;
+        console.log("now invisible");
+    }
+}
+</script>
 
 </html>
